@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR_Code_Generator.MainPage"
+             xmlns:barcode="clr-namespace:Syncfusion.Maui.Barcode;assembly=Syncfusion.Maui.Barcode"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+            <barcode:SfBarcodeGenerator 
+                x:Name="qrCode"
+                Value="QR Code Generator"
+                HeightRequest="500"
+                WidthRequest="500">
+            <barcode:SfBarcodeGenerator.Symbology>
+                <barcode:QRCode />
+            </barcode:SfBarcodeGenerator.Symbology>
+            </barcode:SfBarcodeGenerator>
+
+            <Entry
+                x:Name="entry"
+                Placeholder="Your text"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HeightRequest="55"
+                WidthRequest="500"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="LightCyan"
+                TextChanged="Entry_TextChanged"
+                MaxLength="150"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
